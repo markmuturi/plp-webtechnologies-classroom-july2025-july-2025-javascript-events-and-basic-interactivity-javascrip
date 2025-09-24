@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group h3 {
+    margin-bottom: 15px;
+    color: #444;
+    font-size: 1.1rem;
+}
+
+#length {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: #ddd;
+    outline: none;
+    margin: 10px 0;
+}
+
+#length::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+#length::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.checkbox-label {
+    display: block;
+    margin: 12px 0;
+    font-size: 1rem;
+    color: #555;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+            margin-right: 10px;          
+            transform: scale(1.2);        
+            accent-color: #667eea;      
+        }
+
+        
+        button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;            
+            border: none;             
+            padding: 12px 24px;           
+            border-radius: 8px;         
+            font-size: 1rem;             
+            font-weight: 500;            
+            cursor: pointer;              
+            transition: all 0.3s ease;    
+            margin: 10px 5px;             
+        }
+
+      
+        button:hover {
+            transform: translateY(-2px);  
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4); 
+        }
+
+        
+        button:active {
+            transform: translateY(0);     
+            box-shadow: 0 2px 5px rgba(102, 126, 234, 0.4);   
+        }
+
+        
+        #generateBtn {
+            width: 100%;                  
+            padding: 15px;               
+            font-size: 1.1rem;          
+            margin-top: 10px;           
+        }
+
+        .result-section {
+            margin-top: 30px;             
+            padding-top: 25px;            
+            border-top: 2px solid #eee;  
+        }
+
+        .result-section h3 {
+            margin-bottom: 15px;         
+            color: #333;                  
+            text-align: left;           
+        }
+
+        .password-display {
+            display: flex;               
+            gap: 10px;                  
+            margin-bottom: 20px;         
+        }
+
+        #passwordOutput {
+            flex: 1;                      
+            padding: 12px;              
+            border: 2px solid #ddd;      
+            border-radius: 6px;          
+            font-size: 1rem;             
+            font-family: 'Courier New', monospace;  
+            color: #333;                  
+            text-align: center;           
+        }
+
+        
+        #passwordOutput:focus {
+            outline: none;               
+            border-color: #667eea;        
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);  
+        }
+
+       
+        #copyBtn {
+            white-space: nowrap;          
+            min-width: 80px;            
+        }
+
+       
+        .strength-section {
+            display: flex;                
+            align-items: center;         
+            gap: 15px;                  
+            margin-top: 15px;           
+        }
+
+        .strength-section > span:first-child {
+            font-weight: 500;            
+            color: #555;                 
+            min-width: 70px;             
+        }
+
+        .strength-bar {
+            flex: 1;                      
+            height: 10px;                
+            background-color: #eee;      
+            border-radius: 5px;          
+            overflow: hidden;             
+            position: relative;           
+        }
+
+        
+        .strength-fill {
+            height: 100%;                
+            width: 0%;                    
+            background-color: #ddd;      
+            border-radius: 5px;           
+            transition: all 0.3s ease;    
+        }
+
+        
+        #strengthText {
+            font-weight: 500;             
+            min-width: 60px;              
+            text-align: right;            
+        }
+
+       
+        .error-message {
+            color: #ff4757;              
+            font-size: 0.9rem;           
+            margin-top: 15px;             
+            text-align: center;          
+            font-weight: 500;             
+            min-height: 20px;  
+        }          
+
+        @media (max-width: 600px) {
+            .card {
+                margin: 10px;            
+                padding: 20px;          
+            }
+            
+            .password-display {
+                flex-direction: column;    
+            }
+            
+            #copyBtn {
+                margin-top: 10px;        
+            }
+            
+            .strength-section {
+                flex-direction: column;   
+                align-items: stretch;     
+                gap: 10px;              
+            }
+            
+            .strength-section > span:first-child {
+                text-align: center;      
+                min-width: auto;          
+            }
+            
+            #strengthText {
+                text-align: center;       
+                min-width: auto;          
+            }
+        }

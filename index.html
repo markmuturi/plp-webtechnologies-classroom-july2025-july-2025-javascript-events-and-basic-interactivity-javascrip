@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h1> Password Generator</h1>
+
+            <form id="passwordForm">
+                <!--Password Length Section-->
+                <div class="form-group">
+                    <label for="length">Password Length: <span id="lengthValue">12</span></label>
+                    <input type="range" id="length" min="4" max="50" value="12">
+                </div>
+
+                <!-- Character Type Options-->
+                 <div class="form-group">
+                    <h3>Include:</h3>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="uppercase" checked>
+                        Uppercase Letters (A-Z)
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="lowercase" checked>
+                        Lowercase Letters (a-z)
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="numbers" checked>
+                        Numbers (0-9)
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="symbols" checked>
+                        Special Characters (!@#$....)
+                    </label>
+                 </div>
+
+                 <!--Generator Button-->
+                 <button type="button" id="generateBtn">Generate</button>
+            </form>
+
+            <!--Results Section-->
+            <div class="result-section">
+                <h3>Your Password:</h3>
+                <div class="password-dsipaly">
+                    <input type="text" id="passwordOutput" readonly placeholder="Click generate to create password">
+                    <button type="button" id="copyBtn"> Copy</button>
+                </div>
+
+                <!--Strength Indicator-->
+                <div class="strength-section">
+                    <span>Strength:</span>
+                    <div class="strength-bar">
+                        <div class="strength-fill" id="strengthFill"></div>
+                    </div>
+                    <span id="strengthText">Not Generated</span>
+                </div>
+            </div>
+
+            <!--Error Messages-->
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
